@@ -95,6 +95,13 @@ public class MainTest {
     }
 
     @Test
+    void testExtractEmailsValidEmail() {
+        String input = "john@mail.utoronto.ca";
+        List<String> emails = Main.extractEmails(input);
+        assertEquals(List.of("john@mail.utoronto.ca"), emails);
+    }
+
+    @Test
     void testExtractEmailsDuplicates() {
         String input = "john@mail.utoronto.ca john@mail.utoronto.ca";
         List<String> emails = Main.extractEmails(input);
